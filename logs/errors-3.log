@@ -1,0 +1,4 @@
+Error: ENOENT: no such file or directory, open 'E:\!!NODE\HW\file.txt'
+    at Error (native)
+Error: ENOENT: no such file or directory, open 'E:\!!NODE\HW\file.txt'
+    at Error (native)

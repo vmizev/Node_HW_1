@@ -15,6 +15,8 @@ var server = http.createServer(function(req, res){
                   fs.writeFile('file.txt', data, function (err) {
                     if (err) throw err;
                     console.log('Saved new data to file!');
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end();
                   });
                 })              
             } break;
@@ -31,6 +33,8 @@ var server = http.createServer(function(req, res){
             case "DELETE": {
               fs.truncate('file.txt', 0, function(){
                 console.log('Data Cleared!')
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end();
               })
             }break;
             case "PUT": {
@@ -43,6 +47,8 @@ var server = http.createServer(function(req, res){
                 fs.appendFile('file.txt', data, function (err) {
                   if (err) throw err;
                   console.log('Added text to the end of file!');
+                  res.writeHead(200, { 'Content-Type': 'application/json' });
+                  res.end();
                 });
               });
             } break;
